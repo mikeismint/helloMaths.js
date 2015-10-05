@@ -1,0 +1,29 @@
+{
+  "name": "helloWorld.js",
+  "author": "Mike Wilson",
+  "license": "MIT",
+  "version": "0.0.1",
+  "description": "A simple JS calculator app I am using to experiment with TDD and Node style modules",
+  "homepage": "https://github.com/mikeismint/helloWorld.js"
+
+  "dependencies": {},
+
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "mocha": "^2.3.3"
+  },
+
+  "scripts": {
+    "test": "mocha"
+  },
+
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mikeismint/helloWorld.js.git"
+  },
+
+  "bugs": {
+    "url": "https://github.com/mikeismint/helloWorld.js/issues"
+  },
+
+}
