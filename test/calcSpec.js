@@ -16,5 +16,12 @@ describe("Calculator", function() {
       calc.add( 1, 1, 1, 1 ).should.equal( 4 );
       calc.add( 3 , 10, 8, 1 ).should.equal( 22 );
     });
+
+    it('should add together contents of an array as an argument', function() {
+      calc.add([ 1, 1 ]).should.equal( 2 );
+      calc.add([ 1, 1, 1, 1, 1 ]).should.equal( 5 );
+      calc.add([ 3, 4, 5 ]).should.equal( 12 );
+      calc.add([ 7, 2, 1 ]).should.equal( 10 );
+    });
   });
 });
