@@ -2,7 +2,7 @@ var should = require( 'chai' ).should();
 var calc = require( '../app/Calculator' );
 
 describe("Calculator", function() { 
-  describe("Add", function() {
+  describe("#Add", function() {
     it('should add together two numbers', function() {
       calc.add( 1, 1 ).should.equal( 2 );
       calc.add( 2, 4 ).should.equal( 6 );
@@ -23,5 +23,13 @@ describe("Calculator", function() {
       calc.add([ 3, 4, 5 ]).should.equal( 12 );
       calc.add([ 7, 2, 1 ]).should.equal( 10 );
     });
+
+    it('should add arguments when arrays are mixed with single elements', function() {
+      calc.add(1, [1, 1]).should.equal( 3 );
+      calc.add(1, 1, [1]).should.equal( 3 );
+      calc.add([ 1, 1, 1], 1 ).should.equal( 4 );
+      calc.add([ 1, 1 ], [ 1, 1 ]).should.equal( 4 );
+    });
+
   });
 });
