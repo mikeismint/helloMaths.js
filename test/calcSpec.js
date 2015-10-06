@@ -3,6 +3,14 @@ var calc = require( '../app/Calculator' );
 
 describe("Calculator", function() { 
   describe("#Add", function() {
+    
+    it('should return the arguement when ther is only one', function() {
+      calc.add( 1 ).should.equal( 1 );
+      calc.add( 3 ).should.equal( 3 );
+      calc.add( 10 ).should.equal( 10 );
+      calc.add( 548 ).should.equal( 548 );
+    });
+
     it('should add together two numbers', function() {
       calc.add( 1, 1 ).should.equal( 2 );
       calc.add( 2, 4 ).should.equal( 6 );
