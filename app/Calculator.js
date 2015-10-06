@@ -6,7 +6,12 @@
   var Calculator = function() {};
 
   Calculator.prototype.add = function() {
-    return arguments[0] + arguments[1];
+    var result = 0;
+
+    for( var i = 0; i < arguments.length; i++ ) {
+      result += arguments[i];
+    }
+    return result;
   };
 
 
