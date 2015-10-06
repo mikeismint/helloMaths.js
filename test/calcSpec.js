@@ -32,6 +32,13 @@ describe("Calculator", function() {
       calc.add([ 7, 2, 1 ]).should.equal( 10 );
     });
 
+    it('should add numbers together if they some passed as strings', function() {
+      calc.add( "1", "1", "1" ).should.equal( 3 );
+      calc.add( "22", "5" ).should.equal( 27 );
+      calc.add( "1", 1, "1" ).should.equal( 3 );
+      calc.add( 5, 1.5, "2.5" ).should.equal( 9 );
+    });
+
     it('should add arguments when arrays are mixed with single elements', function() {
       calc.add(1, [1, 1]).should.equal( 3 );
       calc.add(1, 1, [1]).should.equal( 3 );
