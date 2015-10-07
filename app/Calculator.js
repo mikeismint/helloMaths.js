@@ -36,9 +36,20 @@
 
     } /* END for */
 
+    // toPrecision call removes strange results from floating point arithmetic
+    // parseFloat removes trailing zeros
     return parseFloat(result.toPrecision(8), 10 );
   }; /* END ADD */
 
+  /**
+   * Subtracts all subsequent arguments from the first arugument
+   *
+   * @param arguments can consist of arrays, strings or a list of number
+   *
+   * @return the first argument minus the following arguments
+   */
+  Calculator.prototype.subtract = function( start ) {
+    return arguments[0];
+  }; /* END SUBTRACT */
+
 }());
-
-

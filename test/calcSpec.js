@@ -1,15 +1,12 @@
 var should = require( 'chai' ).should();
 var calc = require( '../app/Calculator' );
 
-describe("Calculator", function() { 
+describe("Calculator", function() {
   describe("#Add", function() {
-    
+
     it('should return the arguement when ther is only one', function() {
       calc.add( 1 ).should.equal( 1 );
-      calc.add( 3 ).should.equal( 3 );
       calc.add( 10 ).should.equal( 10 );
-      calc.add( 548 ).should.equal( 548 );
-      calc.add( -10 ).should.equal( -10 );
       calc.add( -548 ).should.equal( -548 );
       calc.add( 1.0 ).should.equal( 1.0 );
       calc.add( -54.8 ).should.equal( -54.8 );
@@ -60,6 +57,16 @@ describe("Calculator", function() {
       calc.add( 1.0, 1.0, 1.0, 1.0 ).should.equal( 4.0 );
       calc.add( -3,  -10, 8.2, -1 ).should.equal( -5.8 );
     });
+  }); /* END #ADD TESTS */
 
-  });
+  describe('#Subtract', function() {
+    it('should return the argument as entered if only one argumnet exists',  function() {
+      calc.subtract( 1 ).should.equal( 1 );
+      calc.subtract( 10 ).should.equal( 10 );
+      calc.subtract( -548 ).should.equal( -548 );
+      calc.subtract( 1.0 ).should.equal( 1.0 );
+      calc.subtract( -54.8 ).should.equal( -54.8 );
+    });
+  }); /* END #SUBTRACT TESTS */
+
 });
