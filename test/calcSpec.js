@@ -9,13 +9,19 @@ describe("Calculator", function() {
       calc.add( 3 ).should.equal( 3 );
       calc.add( 10 ).should.equal( 10 );
       calc.add( 548 ).should.equal( 548 );
+      calc.add( -10 ).should.equal( -10 );
+      calc.add( -548 ).should.equal( -548 );
+      calc.add( 1.0 ).should.equal( 1.0 );
+      calc.add( -54.8 ).should.equal( -54.8 );
     });
 
     it('should add together two numbers', function() {
       calc.add( 1, 1 ).should.equal( 2 );
       calc.add( 2, 4 ).should.equal( 6 );
       calc.add( 10, 10 ).should.equal( 20 );
-      calc.add( 73, 27 ).should.equal( 100 );
+      calc.add( 2, 4 ).should.equal( 6 );
+      calc.add( 10, -10 ).should.equal( 0 );
+      calc.add( -2, -4 ).should.equal( -6 );
     });
 
     it('should add together all arguments passed', function() {
@@ -23,6 +29,7 @@ describe("Calculator", function() {
       calc.add( 2, 4, 6 ).should.equal( 12 );
       calc.add( 1, 1, 1, 1 ).should.equal( 4 );
       calc.add( 3 , 10, 8, 1 ).should.equal( 22 );
+      calc.add( 1, -3, 5 ).should.equal( 3 );
     });
 
     it('should add together contents of an array as an argument', function() {
@@ -44,6 +51,14 @@ describe("Calculator", function() {
       calc.add(1, 1, [1]).should.equal( 3 );
       calc.add([ 1, 1, 1], 1 ).should.equal( 4 );
       calc.add([ 1, 1 ], [ 1, 1 ]).should.equal( 4 );
+    });
+
+    it('should correctly add floating point numbers', function() {
+      calc.add( 1.0, 10 ).should.equal( 11 );
+      calc.add( -7.3, 27 ).should.equal( 19.7 );
+      calc.add( -2, 0.4, 6 ).should.equal( 4.4 );
+      calc.add( 1.0, 1.0, 1.0, 1.0 ).should.equal( 4.0 );
+      calc.add( -3,  -10, 8.2, -1 ).should.equal( -5.8 );
     });
 
   });

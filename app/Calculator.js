@@ -36,7 +36,9 @@
 
     } /* END for */
 
-    return result;
-  };
+    return parseFloat(result.toPrecision(8), 10 );
+  }; /* END ADD */
 
 }());
+
+
