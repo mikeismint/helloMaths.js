@@ -4,7 +4,9 @@
 
   'use strict';
 
-  var Calculator = function() {};
+  var Calculator = function() {
+    this.precision = 12;
+  };
   module.exports = new Calculator();
 
   /**
@@ -38,7 +40,7 @@
 
     // toPrecision call removes strange results from floating point arithmetic
     // parseFloat removes trailing zeros
-    return parseFloat(result.toPrecision(8), 10 );
+    return parseFloat(result.toPrecision(this.precision), 10 );
   }; /* END ADD */
 
   /**
@@ -76,7 +78,7 @@
 
     // toPrecision call removes strange results from floating point arithmetic
     // parseFloat removes trailing zeros
-    return parseFloat(result.toPrecision(8), 10 );
+    return parseFloat(result.toPrecision(this.precision), 10 );
   }; /* END SUBTRACT */
 
 }());

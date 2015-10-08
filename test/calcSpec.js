@@ -96,7 +96,7 @@ describe("Calculator", function() {
       calc.subtract( "-10", 10 ).should.equal( -20 );
     });
 
-    it('should subtract floating float number correctly', function() {
+    it('should subtract floating point numbers correctly', function() {
       calc.subtract( 10, 7.8, 2.2 ).should.equal( 0 );
       calc.subtract( 10.8, 7, 3 ).should.equal( 0.8 );
       calc.subtract( 10.2, -4.8, 14.8 ).should.equal( 0.2 );
