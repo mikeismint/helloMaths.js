@@ -48,18 +48,27 @@
    *
    * @return the first argument minus the following arguments
    */
-  Calculator.prototype.subtract = function( start ) {
-    var result = start;
+  Calculator.prototype.subtract = function() {
+    var result;
+
+    // Convert arguments object to an Array
+    var args = Array.prototype.slice.call(arguments);
     
-    for( var i = 1; i < arguments.length; i++ ) {
-      if( Array.isArray( arguments[i] )) {
+    if( Array.isArray( args[0] )) {
+      result = args[0].shift();
+    } else {
+      result = args.shift();
+    }
+    
+    for( var i = 0; i < args.length; i++ ) {
+      if( Array.isArray( args[i] )) {
         // Copy the array and iterate through it
-        var arr = arguments[i].slice();
+        var arr = args[i].slice();
         for( var n = 0; n < arr.length; n++ ) {
           result -= arr[n];
         }
       } else {
-        result -= arguments[i];
+        result -= args[i];
       }
     }
 

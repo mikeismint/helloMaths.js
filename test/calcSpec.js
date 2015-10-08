@@ -81,6 +81,12 @@ describe("Calculator", function() {
       calc.subtract( 10, [2, 3], [2, 3]).should.equal( 0 );
       calc.subtract( 10, [2, 3], 2, 3 ).should.equal( 0 );
     });
+
+    it('should be able to use the first value of an array as the start value', function() {
+      calc.subtract([ 10, 5, 5 ]).should.equal( 0 );
+      calc.subtract([ 10 ], 5, 5 ).should.equal( 0 );
+      calc.subtract([ 10, 2, 3 ], [2, 3]).should.equal( 0 );
+    });
   }); /* END #SUBTRACT TESTS */
 
 });
