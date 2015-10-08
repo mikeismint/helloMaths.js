@@ -49,7 +49,13 @@
    * @return the first argument minus the following arguments
    */
   Calculator.prototype.subtract = function( start ) {
-    return arguments[0];
+    var result = start;
+    
+    for( var i = 1; i < arguments.length; i++ ) {
+      result -= arguments[i];
+    }
+
+    return result;
   }; /* END SUBTRACT */
 
 }());

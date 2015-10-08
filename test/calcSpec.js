@@ -67,6 +67,13 @@ describe("Calculator", function() {
       calc.subtract( 1.0 ).should.equal( 1.0 );
       calc.subtract( -54.8 ).should.equal( -54.8 );
     });
+
+    it('should return the first argument minus the follwoing arguments', function() {
+      calc.subtract( 10, 10 ).should.equal( 0 );
+      calc.subtract( 100, 50, 50 ).should.equal( 0 );
+      calc.subtract( 10, 2, 5, 3 ).should.equal( 0 );
+      calc.subtract( -10, 10, -20 ).should.equal( 0 );
+    });
   }); /* END #SUBTRACT TESTS */
 
 });
