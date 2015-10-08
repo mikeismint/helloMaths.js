@@ -2,8 +2,8 @@ var should = require( 'chai' ).should();
 var calc = require( '../app/Calculator' );
 
 describe("Calculator", function() {
-  describe("#Add", function() {
 
+  describe("#Add", function() {
     it('should return the arguement when ther is only one', function() {
       calc.add( 1 ).should.equal( 1 );
       calc.add( 10 ).should.equal( 10 );
@@ -104,4 +104,13 @@ describe("Calculator", function() {
     });
   }); /* END #SUBTRACT TESTS */
 
+
+  describe('#Multiply', function() {
+    it('should return the input if there is only one argument', function() {
+      calc.multiply( 10 ).should.equal( 10 );
+      calc.multiply( 7.5 ).should.equal( 7.5 );
+      calc.multiply( -7.5 ).should.equal( -7.5 );
+      calc.multiply( 0 ).should.equal( 0 );
+    });
+  }); /* END #MULTIPLY TESTS */
 });

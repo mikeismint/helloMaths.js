@@ -43,6 +43,7 @@
     return parseFloat(result.toPrecision(this.precision), 10 );
   }; /* END ADD */
 
+
   /**
    * Subtracts all subsequent arguments from the first arugument
    *
@@ -80,5 +81,28 @@
     // parseFloat removes trailing zeros
     return parseFloat(result.toPrecision(this.precision), 10 );
   }; /* END SUBTRACT */
+
+
+  /**
+   * Multiplies all argments
+   *
+   * @param arguments can consist of arrays, strings or a list of number
+   *
+   * @return the first argument multiplied with  the following arguments
+   */
+  Calculator.prototype.multiply = function() {
+    var result;
+
+    // Convert arguments object to an Array
+    var args = Array.prototype.slice.call(arguments);
+
+    if( Array.isArray( args[0] )) {
+      result = args[0].shift();
+    } else {
+      result = args.shift();
+    }
+
+    return result;
+  };
 
 }());
