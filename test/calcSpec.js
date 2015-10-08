@@ -59,6 +59,7 @@ describe("Calculator", function() {
     });
   }); /* END #ADD TESTS */
 
+
   describe('#Subtract', function() {
     it('should return the argument as entered if only one argumnet exists',  function() {
       calc.subtract( 1 ).should.equal( 1 );
@@ -93,6 +94,13 @@ describe("Calculator", function() {
       calc.subtract( 10.5, "10.5" ).should.equal( 0 );
       calc.subtract( "10", 10 ).should.equal( 0 );
       calc.subtract( "-10", 10 ).should.equal( -20 );
+    });
+
+    it('should subtract floating float number correctly', function() {
+      calc.subtract( 10, 7.8, 2.2 ).should.equal( 0 );
+      calc.subtract( 10.8, 7, 3 ).should.equal( 0.8 );
+      calc.subtract( 10.2, -4.8, 14.8 ).should.equal( 0.2 );
+      calc.subtract( 10.6, 2.4, 6.9, 4 ).should.equal( -2.7 );
     });
   }); /* END #SUBTRACT TESTS */
 
