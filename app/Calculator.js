@@ -15,7 +15,7 @@
    * @return Number - the sum of all the arguments
    */
   Calculator.prototype.add = function() {
-    var result = 0;
+    var result = parseFloat( "0" );
 
     for( var i = 0; i < arguments.length; i++ ) {
 
@@ -53,20 +53,22 @@
 
     // Convert arguments object to an Array
     var args = Array.prototype.slice.call(arguments);
-    
+
     if( Array.isArray( args[0] )) {
       result = args[0].shift();
     } else {
       result = args.shift();
     }
-    
+
     for( var i = 0; i < args.length; i++ ) {
+
       if( Array.isArray( args[i] )) {
         // Copy the array and iterate through it
         var arr = args[i].slice();
         for( var n = 0; n < arr.length; n++ ) {
           result -= arr[n];
         }
+
       } else {
         result -= args[i];
       }

@@ -87,6 +87,13 @@ describe("Calculator", function() {
       calc.subtract([ 10 ], 5, 5 ).should.equal( 0 );
       calc.subtract([ 10, 2, 3 ], [2, 3]).should.equal( 0 );
     });
+
+    it('should convert strings and subtract correctly', function() {
+      calc.subtract( "10", "10" ).should.equal( 0 );
+      calc.subtract( 10.5, "10.5" ).should.equal( 0 );
+      calc.subtract( "10", 10 ).should.equal( 0 );
+      calc.subtract( "-10", 10 ).should.equal( -20 );
+    });
   }); /* END #SUBTRACT TESTS */
 
 });
