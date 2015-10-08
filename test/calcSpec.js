@@ -74,6 +74,13 @@ describe("Calculator", function() {
       calc.subtract( 10, 2, 5, 3 ).should.equal( 0 );
       calc.subtract( -10, 10, -20 ).should.equal( 0 );
     });
+
+    it('should give the correct answer when passed an array as an argument', function() {
+      calc.subtract( 10, [ 5, 5 ]).should.equal( 0 );
+      calc.subtract( 10, 5, [5]).should.equal( 0 );
+      calc.subtract( 10, [2, 3], [2, 3]).should.equal( 0 );
+      calc.subtract( 10, [2, 3], 2, 3 ).should.equal( 0 );
+    });
   }); /* END #SUBTRACT TESTS */
 
 });

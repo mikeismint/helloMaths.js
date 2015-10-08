@@ -52,7 +52,15 @@
     var result = start;
     
     for( var i = 1; i < arguments.length; i++ ) {
-      result -= arguments[i];
+      if( Array.isArray( arguments[i] )) {
+        // Copy the array and iterate through it
+        var arr = arguments[i].slice();
+        for( var n = 0; n < arr.length; n++ ) {
+          result -= arr[n];
+        }
+      } else {
+        result -= arguments[i];
+      }
     }
 
     return result;
