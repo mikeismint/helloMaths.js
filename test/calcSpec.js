@@ -112,5 +112,19 @@ describe("Calculator", function() {
       calc.multiply( -7.5 ).should.equal( -7.5 );
       calc.multiply( 0 ).should.equal( 0 );
     });
+
+    it('should multiply all the arguments starting with the first', function() {
+      calc.multiply( 1, 1 ).should.equal( 1 );
+      calc.multiply( 2, 2 ).should.equal( 4 );
+      calc.multiply( 2, 2, 2).should.equal( 8 );
+      calc.multiply( 2, -2, 2 ).should.equal( -8 );
+    });
+
+    it('should give the correct answer when passed an array as an argument', function() {
+      calc.multiply( 1, [ 1, 1 ]).should.equal( 1 );
+      calc.multiply( 2, [ 2, 2 ]).should.equal( 8 );
+      calc.multiply([ 2, 2, 2 ]).should.equal( 8 );
+      calc.multiply([ 2, 2 ], [ 2, 2 ]).should.equal( 16 );
+    });
   }); /* END #MULTIPLY TESTS */
 });

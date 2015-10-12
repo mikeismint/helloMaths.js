@@ -102,6 +102,18 @@
       result = args.shift();
     }
 
+    for( var i = 0; i < args.length; i++ ) {
+      if( Array.isArray( args[i] )) {
+        // Copy the array and iterate through it
+        var arr = args[i].slice();
+        for( var n = 0; n < arr.length; n++ ) {
+          result *= arr[i];
+        }
+      } else {
+        result *= args[i];
+      }
+    }
+
     return result;
   };
 
