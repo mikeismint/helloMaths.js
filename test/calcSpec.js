@@ -123,8 +123,8 @@ describe("Calculator", function() {
     it('should give the correct answer when passed an array as an argument', function() {
       calc.multiply( 1, [ 1, 1 ]).should.equal( 1 );
       calc.multiply( 2, [ 2, 2 ]).should.equal( 8 );
-      calc.multiply([ 2, 2, 2 ]).should.equal( 8 );
-      calc.multiply([ 2, 2 ], [ 2, 2 ]).should.equal( 16 );
+      calc.multiply([ 2, 2, 3 ]).should.equal( 12 );
+      calc.multiply([ 2, 2 ], [ 2, 3 ]).should.equal( 24 );
     });
 
     it('should return the correct result when passed arguments as strings', function() {
@@ -133,5 +133,14 @@ describe("Calculator", function() {
       calc.multiply( 2, [ "2", "2" ]).should.equal( 8 );
       calc.multiply( "10", 10 ).should.equal( 100 );
     });
+
+    it('should return 0 if any of the arguments are 0', function() {
+      calc.multiply( 2, 0 ).should.equal( 0 );
+      calc.multiply([ 2, 2, 0 ]).should.equal( 0 );
+      calc.multiply([ "0" ], 1, 6, 2 ).should.equal( 0 );
+      calc.multiply( 0, [ "2", "2", "2" ]).should.equal( 0 );
+    });
+
   }); /* END #MULTIPLY TESTS */
+
 });

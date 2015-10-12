@@ -107,7 +107,7 @@
         // Copy the array and iterate through it
         var arr = args[i].slice();
         for( var n = 0; n < arr.length; n++ ) {
-          result *= arr[i];
+          result *= arr[n];
         }
       } else {
         result *= args[i];
