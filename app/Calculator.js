@@ -114,7 +114,9 @@
       }
     }
 
-    return result;
+    // toPrecision call removes strange results from floating point arithmetic
+    // parseFloat removes trailing zeros
+    return parseFloat(result.toPrecision(this.precision), 10 );
   };
 
 }());

@@ -141,6 +141,13 @@ describe("Calculator", function() {
       calc.multiply( 0, [ "2", "2", "2" ]).should.equal( 0 );
     });
 
+    it('should return the correct result with floating point arguments', function() {
+      calc.multiply( 1, 1.5 ).should.equal( 1.5 );
+      calc.multiply( 2.0, -2.7 ).should.equal( -5.4 );
+      calc.multiply([ 2.0, -2.7], 3, 4.2 ).should.equal( -68.04 );
+      calc.multiply( "2", 3.2, [ -4.1 ]).should.equal( -26.24 );
+    });
+
   }); /* END #MULTIPLY TESTS */
 
 });
