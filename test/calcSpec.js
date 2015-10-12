@@ -126,5 +126,12 @@ describe("Calculator", function() {
       calc.multiply([ 2, 2, 2 ]).should.equal( 8 );
       calc.multiply([ 2, 2 ], [ 2, 2 ]).should.equal( 16 );
     });
+
+    it('should return the correct result when passed arguments as strings', function() {
+      calc.multiply( "1", "1" ).should.equal( 1 );
+      calc.multiply( 1, "2" ).should.equal( 2 );
+      calc.multiply( 2, [ "2", "2" ]).should.equal( 8 );
+      calc.multiply( "10", 10 ).should.equal( 100 );
+    });
   }); /* END #MULTIPLY TESTS */
 });
