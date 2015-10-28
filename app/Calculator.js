@@ -119,4 +119,16 @@
     return parseFloat(result.toPrecision(this.precision), 10 );
   };
 
+
+  /**
+   * Divides all argments
+   *
+   * @param arguments can consist of arrays, strings or a list of number
+   *
+   * @return the first argument divided by the following arguments
+   */
+  Calculator.prototype.divide = function() {
+    return arguments[0];
+  };
+
 }());

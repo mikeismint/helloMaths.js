@@ -150,4 +150,14 @@ describe("Calculator", function() {
 
   }); /* END #MULTIPLY TESTS */
 
+
+  describe('#Divide', function() {
+    it('should return the input if there is only one', function() {
+      calc.divide( 1 ).should.equal( 1 );
+      calc.divide( 10 ).should.equal( 10 );
+      calc.divide( -10 ).should.equal( -10 );
+      calc.divide( 254 ).should.equal( 254 );
+    });
+  });
+
 });

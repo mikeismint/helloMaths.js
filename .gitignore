@@ -1,6 +1,8 @@
 # Swap files
 *.swp
+*.swo
 *.*.swp
+*.*.swo
 
 # Logs
 logs
