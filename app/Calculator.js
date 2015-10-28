@@ -128,7 +128,22 @@
    * @return the first argument divided by the following arguments
    */
   Calculator.prototype.divide = function() {
-    return arguments[0];
+    var result;
+
+    // Convert arguments object to an Array
+    var args = Array.prototype.slice.call(arguments);
+
+    if( Array.isArray( args[0] )) {
+      result = args[0].shift();
+    } else {
+      result = args.shift();
+    }
+
+    for( var i = 0; i < args.length; i++ ) {
+      result /= args[i];
+    }
+
+    return result;
   };
 
 }());

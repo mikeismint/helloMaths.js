@@ -158,6 +158,13 @@ describe("Calculator", function() {
       calc.divide( -10 ).should.equal( -10 );
       calc.divide( 254 ).should.equal( 254 );
     });
+
+    it('should return divide all arguments starting with the first', function() {
+      calc.divide( 1, 1 ).should.equal( 1 );
+      calc.divide( 10, 5 ).should.equal( 2 );
+      calc.divide( 9, 3, 3 ).should.equal( 1 );
+      calc.divide( -10, 2 ).should.equal( -5 );
+    });
   });
 
 });
